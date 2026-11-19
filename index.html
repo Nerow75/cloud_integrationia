@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tableau de bord Nova Commerce : performances de la boutique, chiffre d'affaires et commandes récentes.">
+  <title>Tableau de bord | Nova Commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/menu.js" defer></script>
+  <script src="js/chart.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenu">Aller au contenu principal</a>
+
+  <!-- ===== Barre latérale ===== -->
+  <aside class="sidebar" id="sidebar" aria-label="Menu latéral">
+    <a class="brand" href="#" aria-label="Nova Commerce, accueil">
+      <span class="brand__logo" aria-hidden="true">N</span>
+      <span class="brand__name">Nova Commerce</span>
+    </a>
+
+    <nav class="sidebar__nav" aria-label="Navigation principale">
+      <ul class="nav-list">
+        <li>
+          <a class="nav-link" href="#" aria-current="page">
+            <img class="nav-link__icon" src="assets/icons/layout-dashboard.svg" alt="" width="19" height="19">
+            <span class="nav-link__label">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">
+            <img class="nav-link__icon" src="assets/icons/shopping-cart.svg" alt="" width="19" height="19">
+            <span class="nav-link__label">Commandes</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">
+            <img class="nav-link__icon" src="assets/icons/users-nav.svg" alt="" width="19" height="19">
+            <span class="nav-link__label">Clients</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">
+            <img class="nav-link__icon" src="assets/icons/settings.svg" alt="" width="19" height="19">
+            <span class="nav-link__label">Paramètres</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Carte d'aide (desktop et menu mobile) -->
+    <section class="help-card" aria-labelledby="help-title">
+      <span class="help-card__icon">
+        <img src="assets/icons/help.svg" alt="" width="17" height="17">
+      </span>
+      <div class="help-card__message">
+        <h2 class="help-card__title" id="help-title">Besoin d'aide ?</h2>
+        <p class="help-card__text">Notre équipe vous répond sous quelques minutes.</p>
+      </div>
+      <a class="btn btn--light" href="#">Contacter le support</a>
+    </section>
+
+    <!-- Bouton d'aide compact (tablette) -->
+    <a class="help-compact" href="#" aria-label="Besoin d'aide ? Contacter le support">
+      <img src="assets/icons/help-compact.svg" alt="" width="18" height="18">
+    </a>
+  </aside>
+
+  <!-- ===== Barre supérieure ===== -->
+  <header class="topbar">
+    <div class="topbar__start">
+      <button class="menu-btn" type="button" aria-controls="sidebar" aria-expanded="false" aria-label="Ouvrir le menu">
+        <img src="assets/icons/menu.svg" alt="" width="21" height="21">
+      </button>
+      <a class="topbar__brand" href="#" aria-label="Nova Commerce, accueil">Nova</a>
+
+      <form class="search" id="search" role="search" action="#">
+        <label class="sr-only" for="search-input">Rechercher une commande</label>
+        <img class="search__icon" src="assets/icons/search.svg" alt="" width="17" height="17">
+        <input class="search__input" id="search-input" type="search" name="q" placeholder="Rechercher une commande..." autocomplete="off">
+        <kbd class="search__kbd" aria-hidden="true">⌘K</kbd>
+      </form>
+    </div>
+
+    <div class="topbar__actions">
+      <button class="search-btn" type="button" aria-controls="search" aria-expanded="false" aria-label="Rechercher une commande">
+        <img src="assets/icons/search-mobile.svg" alt="" width="19" height="19">
+      </button>
+
+      <button class="notif-btn" type="button" aria-label="Notifications, 1 nouvelle">
+        <img src="assets/icons/notifications.svg" alt="" width="38" height="38">
+      </button>
+
+      <div class="user">
+        <span class="avatar avatar--user" aria-hidden="true">ML</span>
+        <p class="user__info">
+          <span class="user__name">Marie Laurent</span>
+          <span class="user__role">Administratrice</span>
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Contenu principal ===== -->
+  <main class="main" id="contenu">
+    <div class="page-head">
+      <div>
+        <h1 class="page-head__title">Tableau de bord</h1>
+        <p class="page-head__subtitle">Voici les performances de votre boutique aujourd’hui.</p>
+      </div>
+      <button class="date-btn" type="button" aria-label="Période : du 1er au 7 octobre 2026">
+        <img src="assets/icons/calendar-days.svg" alt="" width="16" height="16">
+        <time datetime="2026-10-01/2026-10-07">1–7 oct. 2026</time>
+      </button>
+    </div>
+
+    <!-- Indicateurs clés -->
+    <section class="kpis" aria-labelledby="kpis-title">
+      <h2 class="sr-only" id="kpis-title">Indicateurs clés</h2>
+
+      <div class="card kpi">
+        <div class="kpi__head">
+          <h3 class="kpi__label">Commandes du jour</h3>
+          <span class="kpi__icon"><img src="assets/icons/shopping-bag.svg" alt="" width="16" height="16"></span>
+        </div>
+        <p class="kpi__value">
+          <data value="284">284</data>
+          <span class="trend trend--up"><span class="sr-only">En hausse de </span>+12,5 %</span>
+        </p>
+      </div>
+
+      <div class="card kpi">
+        <div class="kpi__head">
+          <h3 class="kpi__label">Chiffre d'affaires</h3>
+        </div>
+        <p class="kpi__value">
+          <data value="24680">24 680 €</data>
+          <span class="trend trend--up"><span class="sr-only">En hausse de </span>+8,2 %</span>
+        </p>
+      </div>
+
+      <div class="card kpi">
+        <div class="kpi__head">
+          <h3 class="kpi__label">Nouveaux clients</h3>
+          <span class="kpi__icon"><img src="assets/icons/users.svg" alt="" width="16" height="16"></span>
+        </div>
+        <p class="kpi__value">
+          <data value="47">47</data>
+          <span class="trend trend--up"><span class="sr-only">En hausse de </span>+5,4 %</span>
+        </p>
+      </div>
+
+      <div class="card kpi">
+        <div class="kpi__head">
+          <h3 class="kpi__label">Commandes en attente</h3>
+          <span class="kpi__icon"><img src="assets/icons/clock-3.svg" alt="" width="16" height="16"></span>
+        </div>
+        <p class="kpi__value">
+          <data value="18">18</data>
+          <span class="trend trend--down"><span class="sr-only">En baisse de </span>−3,1 %</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Chiffre d'affaires -->
+    <section class="card revenue" aria-labelledby="revenue-title">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title" id="revenue-title">Chiffre d'affaires</h2>
+          <p class="card__subtitle">7 derniers jours</p>
+        </div>
+        <p class="legend">
+          <img src="assets/icons/legend-dot.svg" alt="" width="8" height="8">
+          Revenu
+        </p>
+      </div>
+
+      <figure class="chart" id="revenue-chart">
+        <!-- Le graphique SVG est généré par js/chart.js -->
+        <figcaption class="sr-only">Évolution du chiffre d'affaires sur les 7 derniers jours, en euros.</figcaption>
+        <table class="sr-only">
+          <caption>Chiffre d'affaires par jour</caption>
+          <thead>
+            <tr><th scope="col">Jour</th><th scope="col">Revenu</th></tr>
+          </thead>
+          <tbody id="revenue-data"></tbody>
+        </table>
+      </figure>
+    </section>
+
+    <!-- Commandes récentes -->
+    <section class="card orders" aria-labelledby="orders-title">
+      <div class="card__head">
+        <div>
+          <h2 class="card__title" id="orders-title">Commandes récentes</h2>
+          <p class="card__subtitle">Les dernières activités de votre boutique</p>
+        </div>
+        <a class="link" href="#">Voir tout<span class="sr-only"> les commandes</span></a>
+      </div>
+
+      <table class="table">
+        <colgroup>
+          <col class="table__col-client">
+          <col class="table__col-status">
+          <col class="table__col-amount">
+          <col class="table__col-date">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col">Client</th>
+            <th scope="col">Statut</th>
+            <th scope="col">Montant</th>
+            <th scope="col">Date et heure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--blue" aria-hidden="true">CD</span>
+                <p class="customer__info"><span class="customer__name">Camille Dupont</span><span class="customer__mail">camille.dupont@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--success">Livrée</span></td>
+            <td><data value="189.90">189,90 €</data></td>
+            <td><time class="when" datetime="2026-10-07T14:32">Aujourd’hui<span>14:32</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--green" aria-hidden="true">TM</span>
+                <p class="customer__info"><span class="customer__name">Thomas Martin</span><span class="customer__mail">thomas.martin@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--warning">En préparation</span></td>
+            <td><data value="74.50">74,50 €</data></td>
+            <td><time class="when" datetime="2026-10-07T13:48">Aujourd’hui<span>13:48</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--pink" aria-hidden="true">SL</span>
+                <p class="customer__info"><span class="customer__name">Sophie Leroy</span><span class="customer__mail">sophie.leroy@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--success">Livrée</span></td>
+            <td><data value="249.00">249,00 €</data></td>
+            <td><time class="when" datetime="2026-10-07T12:16">Aujourd’hui<span>12:16</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--orange" aria-hidden="true">NB</span>
+                <p class="customer__info"><span class="customer__name">Nicolas Bernard</span><span class="customer__mail">n.bernard@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--danger">Annulée</span></td>
+            <td><data value="58.20">58,20 €</data></td>
+            <td><time class="when" datetime="2026-10-07T11:42">Aujourd’hui<span>11:42</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--purple" aria-hidden="true">ÉR</span>
+                <p class="customer__info"><span class="customer__name">Émilie Robert</span><span class="customer__mail">emilie.robert@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--warning">En préparation</span></td>
+            <td><data value="132.80">132,80 €</data></td>
+            <td><time class="when" datetime="2026-10-06T18:09">Hier<span>18:09</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--teal" aria-hidden="true">JL</span>
+                <p class="customer__info"><span class="customer__name">Julien Laurent</span><span class="customer__mail">julien.laurent@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--success">Livrée</span></td>
+            <td><data value="95.40">95,40 €</data></td>
+            <td><time class="when" datetime="2026-10-06T16:27">Hier<span>16:27</span></time></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="customer">
+                <span class="avatar avatar--beige" aria-hidden="true">MG</span>
+                <p class="customer__info"><span class="customer__name">Manon Garcia</span><span class="customer__mail">manon.garcia@mail.fr</span></p>
+              </div>
+            </td>
+            <td><span class="badge badge--success">Livrée</span></td>
+            <td><data value="318.00">318,00 €</data></td>
+            <td><time class="when" datetime="2026-10-06T15:03">Hier<span>15:03</span></time></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div class="backdrop" hidden></div>
+</body>
+</html>

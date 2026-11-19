@@ -1,0 +1,19 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1038" height="218" viewBox="0 0 1038 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Courbe" clip-path="url(#clip0_0_13)">
+<line id="Grille" y1="-0.5" x2="1038" y2="-0.5" stroke="#E8EDF5"/>
+<line id="Grille_2" y1="72.1667" x2="1038" y2="72.1667" stroke="#E8EDF5"/>
+<line id="Grille_3" y1="144.833" x2="1038" y2="144.833" stroke="#E8EDF5"/>
+<line id="Grille_4" y1="217.5" x2="1038" y2="217.5" stroke="#E8EDF5"/>
+<path id="Ligne de revenu" d="M0 218C102 208.218 159 163.5 251 176.077C357 190.051 425 111.795 520 122.974C627 134.154 691 64.2821 783 78.2564C877 92.2308 951 16.7692 1038 0" stroke-width="3" stroke="#2563EB"/>
+<circle id="Point" cy="181" r="3" fill="white" stroke-width="2" stroke="#2563EB"/>
+<circle id="Point_2" cx="251" cy="151" r="3" fill="white" stroke-width="2" stroke="#2563EB"/>
+<circle id="Point_3" cx="520" cy="113" r="3" fill="white" stroke-width="2" stroke="#2563EB"/>
+<circle id="Point_4" cx="783" cy="81" r="3" fill="white" stroke-width="2" stroke="#2563EB"/>
+<circle id="Point_5" cx="1038" cy="25" r="3" fill="white" stroke-width="2" stroke="#2563EB"/>
+</g>
+<defs>
+<clipPath id="clip0_0_13">
+<rect width="1038" height="218" fill="white"/>
+</clipPath>
+</defs>
+</svg>
